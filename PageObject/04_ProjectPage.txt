@@ -1,0 +1,127 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+
+# TODO: Write Dcocumentation e.g. Project Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+Documentation	
+
+# TODO: Write Precondition, Postcondition, Tags
+
+Pre Condition	 Open browser, Have an account
+Post Condition	 Close browser
+Tags
+
+#******************* Common Variables ********************
+
+*** Variables ***
+	Project name: Jokunen, Jökunen, Jäkunen, JokunenRuby
+	Project slug: jokunen, jökunen, jäkunen
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Project creation field variables
+
+Project name
+Project URL
+Project slug
+Project deployment target (optional)
+
+Visibility Level:
+	Private
+	Internal
+	Public 
+
+Project Configuration check box:
+	Initialize repository with a README
+	Enable Static Application Security Testing (SAST)
+
+Create project button
+Cancel button
+
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive and Negative Test Cases and Test Process steps
+
+# Positive Test examples are below write test process steps for each below test case
+
+	Create blank project
+		Navigate to create project
+		Select Create blank project
+		Input project name Jokunen
+		Press create project button
+		Close Browser
+	
+	Expected result: Blank project created successfully
+
+
+
+	Create template project
+		Navigate to create project
+		Select create template project
+		Select ruby on rails as template
+		Name the project JokunenRuby
+		Press create project button
+		close browser
+
+	Expected result: Template project created successfully
+
+
+
+	Delete project template
+		Navigate to template project
+		Navigate to general settings
+		Scroll down the page
+		Select advanced
+		Scroll down the page
+		Press delete project
+		Fill the form with the project name
+		Confirm the delete
+		Close the browser
+
+	Expected results: Template project deleted
+
+	Update name of template project
+		Navigate to template project
+		navigate to general settings
+		Change the project name to RubyJokunen
+		Press save changes
+		close browser
+
+		Expected result: Template project has been renamed
+
+
+# Negative Test examples are below write test process steps for each below test case
+
+	Create a blank project with the previous same name
+		Create blank project
+		Input project name Jokunen
+		Press create project button
+		Close Browser
+
+		Expected result: There should pop up that the project name has already been taken
+
+	Create a blank project with letters containing ö
+		Create blank project
+		Input project name: Jökunen
+		Input name in Project slug : Jökunen
+		Press create project button
+		Close Browser
+
+		Expected result: There should pop up a message that the project can't contain the letter ö	
+	
+	Create a blank project with letters containing ä
+		Create blank project
+		Input project name: Jäkunen
+		Input name in Project slug : Jäkunen
+		Press create project button
+		Close Browser
+
+		Expected result: There should pop up a message that the project can't contain the letter ä
+
+

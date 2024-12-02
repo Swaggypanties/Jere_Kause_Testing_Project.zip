@@ -1,0 +1,100 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+Documentation	Issue Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+# TODO: Write Precondition and Postcondition, Tags 
+
+Pre Condition	Open browser, have an account, have a project
+Post Condition	Close browser
+Tags
+
+#******************* Common Variables ********************
+
+
+*** Variables ***
+
+--Create Issue page--
+	Title
+	Type
+	Description
+	Assignee
+	Due date
+	Milestone
+	Labels
+	Create issue button
+	Cancel button
+
+--Edit issue page--
+	Edit button
+	Save changes
+	Cancel button
+	
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Issue creation field variables, Updated name of the issue
+
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive Test Cases and Test Process steps
+
+# Positive Test examples are below write test process steps for each below test case
+
+		Create issue
+			Navigate to issue page
+			Press new issue
+			Input title: issue01
+			Input description: Button not working
+			Assign the issue to: Unassigned
+			Milestone: No Milestone
+			Labels: No labels
+			Set due date: DEC 2024-12-03
+			Submit issue by pressing the button create issue
+			Close browser
+
+		Expected results: New issue created
+
+
+ 		Update name of issue
+			Navigate to issue page
+			Navigate to issue01 page
+			press edit
+			Change issue01 to issue02
+			Save changes
+			Close browser
+
+		Expected results: issue01 has changed to issue02
+
+
+		Create second issue with previous updated name
+			Navigate to issue page
+			Navigate to issue01 page
+			Press new issue
+			Input previous title: issue01
+			Input description: Button not working again
+			Assign the issue to: Unassigned
+			Milestone: No Milestone
+			Labels: No labels
+			Set due date: DEC 2024-12-03
+			Submit issue by pressing the button create issue
+			Close browser
+
+		Expected result: Issue01 has been created
+
+
+    	Delete first issue
+			Navigate to issue page
+			Navigate to the first issue page(Issue02)
+			Press the triple dot button beside the edit button
+			Select delete issue
+			Confirm the delete
+			Close browser
+
+		Expected result: The first issue has been deleted
+
+

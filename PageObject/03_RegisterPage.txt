@@ -1,0 +1,127 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+
+# TODO: Write Documentation e.g. User Registration Test scenario with verification, valid and invalid credentials.
+
+Documentation	
+
+# TODO: Write Precondition, Postcondition, Tags
+
+Pre Condition	Open Browser
+Post Condition	Close All Browsers
+Tags
+
+#******************* Common Variables ********************
+
+*** Variables ***
+
+First name: Jere, Lauri
+Last name: Kause, Markkanen
+Username: jek00026, jek000026
+Email: *Own personal email*, *Own school email*
+Password: *********
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Registration field variables
+
+LoginUrl = https://gitlab.com/users/sign_up
+
+First name: 
+Last name: 
+Username: 
+Email: 
+Password: 
+terms and agreement check box
+Continue button
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive and Negative Test Cases and Test Process steps (Think about possible test cases)
+
+# Positive Test examples are below write test process steps for each below test case
+
+	Register user with valid username and password 
+		Navigate to register page sign_up
+		Input first name: Jere
+		Input last name: Kause
+		Input username: jek00026
+		input email: *Own personal email*
+		Input password: *********
+		Check the agreement box
+		Press continue
+		Navigate through the confirmation process
+		Registration complete
+		Close Browser
+
+		Expected results: User has registered successfully
+
+# Negative Test examples keywords are below write test process steps for each below test case 
+
+	Registering user with same username should highlight that the username has already been taken
+		Navigate to register page sign_up
+		Input first name: Lauri	
+		Input last name: Markkanen
+		Input username: jek00026
+		input email: *Own school email*
+		Input password: *********
+		Check the agreement box
+		Press continue
+		Close Browser
+
+		Expected results: Username form should pop up a message that username is already taken and the user can't go forward
+		
+		
+
+
+	Register user with same above email should highlight that the email has already been taken
+		Navigate to register page sign_up
+		Input first name: Lauri	
+		Input last name: Markkanen
+		Input username: jek000026
+		Input email: *Own personal email*
+		Input password: *********
+		Check the agreement box
+		Press continue
+		Close Browser
+
+		Expected results: Email field should pop up a message that the email is already taken
+
+	Register user with a password with less than 8 characters
+		Navigate to register page sign_up
+		Input first name: Lauri	
+		Input last name: Markkanen
+		Input username: jek000026
+		Input email: *Own school email*
+		Input password: *******
+		Check the agreement box
+		Press continue
+		Close Browser
+
+		Expected results: Password field should pop up a message that the minimum length for a password is 8 characters
+
+	Register user without checking the agreement box
+		Navigate to register page sign_up
+		Input first name: Lauri	
+		Input last name: Markkanen
+		Input username: jek000026
+		Input email: *Own school email*
+		Input password: *******
+		Don't check the agreement box
+		Press continue
+		Close Browser
+
+		Expected results: There should come a pop up that you must agree to the terms and service
+	
+
+
+	
+
+
+
+
